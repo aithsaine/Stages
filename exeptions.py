@@ -1,2 +1,0 @@
-class EmptyId (Exception):
-    __
