@@ -58,8 +58,13 @@ class Stage:
         Stage.stages_collection.update_one({"id":id},{"$set":new_data})
 
     @staticmethod
-    def DeleteFromDb(id:int):
-        Stage.stages_collection.delete_one({"id":id})
+    def DeleteFromDb(id:int)->bool:
+        ids = list(map(lambda item : item["id"],Stage.getAllStages()))
+        if id in ids:
+            Stage.stages_collection.delete_one({"id":id})
+            return True
+        else:
+            return False
 
 
 
@@ -70,3 +75,4 @@ for item in stages:
     print() """
 
 """ res = Stage.UpdateFromDb(2,{"nom":"Generate DataBases SQL"}) """
+

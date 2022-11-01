@@ -13,32 +13,34 @@ app = tk.Tk()
 app.geometry("500x500")
 app.iconbitmap("stage.ico")
 app.title("Gestion Des Stage")
+app['bg']='#5d8a82'
+
 app.resizable(False,False)
-lb_title = tk.Label(text="Gestion De Stage",font="5",bd=10)
+lb_title = tk.Label(text="Gestion De Stage",font="5",bd=10,bg='#5d8a82')
 lb_title.grid(column=0,row=0,columnspan=5,rowspan=3,pady=10,padx=120)
 # id :
-lb_id = tk.Label(text="Id",font=10)
+lb_id = tk.Label(text="Id",font=10,bg='#5d8a82')
 lb_id.grid(column=0,row=4,padx=10,sticky=tk.W)
 enId = tk.Entry(font=15,bd=2)
 enId.grid(row=4,column=1,padx=20)
 #  nom stage : 
-lb_name = tk.Label(text="Nom de stage",font=10)
+lb_name = tk.Label(text="Nom de stage",font=10,bg='#5d8a82')
 lb_name.grid(column=0,row=5,padx=10,sticky=tk.W)
 enname = tk.Entry(font=15,bd=2)
 enname.grid(row=5,column=1)
 #  duree : 
-lb_Duration = tk.Label(text="Duree",font=10)
+lb_Duration = tk.Label(text="Duree",font=10,bg='#5d8a82')
 lb_Duration.grid(column=0,row=6,padx=10,sticky=tk.W)
 enDuration = tk.Entry(font=10,bd=2)
 enDuration.grid(row=6,column=1)
 
 # prix
-lb_price = tk.Label(text="Prix",font=10)
+lb_price = tk.Label(text="Prix",font=10,bg='#5d8a82')
 lb_price.grid(column=0,row=7,padx=10,sticky=tk.W)
 enPrice = tk.Entry(font=10,bd=2)
 enPrice.grid(row=7,column=1)
 # domaine
-lb_Domaine = tk.Label(text="Domaine",font=10)
+lb_Domaine = tk.Label(text="Domaine",font=10,bg='#5d8a82')
 lb_Domaine.grid(column=0,row=8,padx=10,sticky=tk.W)
 enDomaine = tk.Entry(font=10,bd=2)
 enDomaine.grid(row=8,column=1)
@@ -69,9 +71,8 @@ def Inserer():
 
 #Supprimer un stage
 def Supprimer():
-    supprimerGui = tk.Tk()
-    supprimerGui.geometry("500x500")
-    supprimerGui.mainloop
+    app.destroy()
+    import deletepage
 
 
 btnInsert = tk.Button(text="Inserer",bg="#c1eeff",width=10,command=Inserer).grid(row=4, column=2,pady=5)
