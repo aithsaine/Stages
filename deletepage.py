@@ -19,9 +19,9 @@ def valider_supprission():
     id = en_id.get()
     if id =="":
         messagebox.showerror("erreur","etre l'id de stage")
-    if id != "" and not re.search(r"\d+",id):
+    if id != "" and not re.search(r"^\d+$",id):
         messagebox.showerror("erreur","l'id doit etre un nombre")
-    elif id != "" and re.search(r"\d+",id):
+    elif id != "" and re.search(r"^\d+$",id):
         if int(id) not in ids:
             messagebox.showerror("erreur","Aucun Stage a cet id")
         else:
