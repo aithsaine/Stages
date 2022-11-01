@@ -45,7 +45,7 @@ enDomaine.grid(row=8,column=1)
 
 # btns Function:
 
-
+#    Inserer un Stage:
 def Inserer():
     id = enId.get()
     nom = enname.get()
@@ -67,15 +67,19 @@ def Inserer():
 
 
 
-#btn insert
+#Supprimer un stage
+def Supprimer():
+    supprimerGui = tk.Tk()
+    supprimerGui.geometry("500x500")
+    supprimerGui.mainloop
 
 
 btnInsert = tk.Button(text="Inserer",bg="#c1eeff",width=10,command=Inserer).grid(row=4, column=2,pady=5)
-btnDelete = tk.Button(text="Supprimer",bg="#c1eeff",width=10).grid(row=5, column=2,pady=5)
+btnDelete = tk.Button(text="Supprimer",bg="#c1eeff",width=10,command=Supprimer).grid(row=5, column=2,pady=5)
 btnSearsh = tk.Button(text="Chercher",bg="#c1eeff",width=10).grid(row=6, column=2,pady=5)
 btnUpdate = tk.Button(text="Modifier",bg="#c1eeff",width=10).grid(row=7, column=2,pady=5)
 dd = tk.Checkbutton()
-table = ttk.Treeview(app,columns=(1,2,3,4,5),heigh=4,show="headings",padding=5)
+table = ttk.Treeview(app,columns=(1,2,3,4,5),heigh=5,show="headings",padding=5)
 table.heading(1,text="ID")
 table.heading(2,text="nom")
 table.heading(3,text="duration")
